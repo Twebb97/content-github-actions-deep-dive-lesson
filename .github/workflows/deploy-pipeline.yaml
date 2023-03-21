@@ -47,9 +47,11 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name : release
-        uses : actions/create-release@v2
+        uses : actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
